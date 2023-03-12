@@ -2,6 +2,8 @@
 import styled from "styled-components"
 import ProfilePicture from "./assets/profilbild_240px.png"
 
+import Home from "./Views/Home";
+
 const Background = styled.div`
   background: linear-gradient(53deg, rgba(16,184,218,1) 0%, rgba(9,9,121,1) 100%);
   height: 100vh;
@@ -58,9 +60,7 @@ const ProfileCircle = styled.div`
   /* margin: 2rem; */
 `
 
-const BodyDiv = styled.div`
 
-`;
 
 function App() {
   return (
@@ -77,14 +77,8 @@ function App() {
           </HeaderTitleContainer>
           <RightSideCounter></RightSideCounter>
         </HeaderContainer>
-        <BodyDiv>
-          <h2>Some things:</h2>
-          <ul>
-            <li>Storytelling</li>
-            <li>Music</li>
-            <li>WEB AR</li>
-          </ul>
-        </BodyDiv>
+        <Home></Home>
+
 
       </Background >
     </div>

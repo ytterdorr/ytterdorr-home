@@ -1,12 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
+import STCatalog from './STCatalog';
+import Endings from './STCatalog/Endings';
 import reportWebVitals from './reportWebVitals';
+import ErrorPage from './Views/ErrorPage';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { AdminRoutes } from './STCatalog/STRoutes';
+import ReactStrapTutorial from './ReactStrapTutorial';
+import AdminRoutes from './STCatalog/AdminRoutes';
+
+const NoMatch = () => {
+  return (<div>No Match</div>)
+}
+
+// const root = ReactDOM.createRoot(
+//   document.getElementById("root")
+// )
+
+// root.render(
+
+// )
+
+// const AdminRoutes = () => (
+//   <Routes>
+//     <Route path="countries" element="countries" />
+//     <Route path="tournaments" element="Tournaments" />
+//     <Route path="*" element="Admin" />
+//   </Routes>
+// );
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} errorElement={<ErrorPage />} />
+        <Route path="/ReactStrapTutorial" element={<ReactStrapTutorial />} />
+        <Route path="/admin/*" element={<AdminRoutes />} />
+        <Route path="/STCatalog" element={<STCatalog />} errorElement={<ErrorPage />}>
+          <Route path="Start" element={<div>Maybe a list</div>} />
+          <Route path="Endings" element={<Endings />} />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+        <Route path="*" element={<NoMatch></NoMatch>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
