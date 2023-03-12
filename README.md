@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# Ytterdorr Home
+
+This project is supposed to replace the current page at ytterdorr.github.io. 
+A sort of porfolio/catch-all to place some projects and maybe build some tools I want. 
+
+## What it will contain
+
+Some projects related to storytelling, and possibly some of my old AR projects. 
+
+## What I am doing right now
+
+Currently I am exploring React Router, and some styling libraries. 
+
+
+
+
+---
+
+# (Standard Create React App readme)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
